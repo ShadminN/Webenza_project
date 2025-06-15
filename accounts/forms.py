@@ -43,3 +43,9 @@ class ContactForm(forms.Form):
         if phone and (phone < 1000000000 or phone > 9999999999):
             raise forms.ValidationError('Enter a valid phone number with 10 digits.')
         return phone
+    
+
+
+
+
+    

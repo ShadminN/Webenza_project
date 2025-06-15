@@ -7,12 +7,12 @@ from django.contrib.auth.models import User
 from smtplib import SMTPException
 from email.message import EmailMessage
 from django.core.mail import send_mail
+from django.shortcuts import render, get_object_or_404
+from .models import Department, Employee
 
 
 
 # Create your views here.
-
-
 
 def login(request):
     if request.method== 'POST':
@@ -71,23 +71,11 @@ def logout(request):
 
 #email
 
-
-
-
-
 def contact(request):
-
-    send_mail(
-        'Testing Mail',
-        'Here is the message.',
-        'shadmin@webenza.com',
-        ['testingprojectd@gmail.com'],
-        fail_silently=False,
-    )  
-
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
+            
             # Save the form data to the database
             contact = Contact(
                 name=form.cleaned_data['name'],
@@ -97,7 +85,16 @@ def contact(request):
             )
             contact.save()
 
-                    
+
+            send_mail(
+                 'Testing Mail',
+                 'Here is the message.',
+                 'testingonly552@gmail.com',
+                 ['testingprojectd@gmail.com'],
+                 fail_silently=False,
+            )  
+
+              
             messages.success(request, 'Thank you for your message! We will get back to you shortly.')
             return redirect('contact')  # Redirect to the same page to avoid resubmission
         else:
@@ -105,4 +102,28 @@ def contact(request):
     else:
         form = ContactForm()
 
+    
     return render(request, 'contact.html', {'form': form})
+
+
+# View to list all departments
+def department_list(request):
+    departments = Department.objects.all()
+    return render(request, 'department_list.html', {'departments': departments})
+
+# View to list all employees
+def employee_list(request):
+    employees = Employee.objects.all()
+    return render(request, 'employee_list.html', {'employees': employees})
+
+# View to display a specific department's details and its employees
+def department_detail(request, pk):
+    department = get_object_or_404(Department, pk=pk)
+    employees = department.employees.all()
+    return render(request, 'department_detail.html', {'department': department, 'employees': employees})
+
+# View to display a specific employee's details
+def employee_detail(request, pk):
+    employee = get_object_or_404(Employee, pk=pk)
+    return render(request, 'employee_detail.html', {'employee': employee})
+
