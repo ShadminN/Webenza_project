@@ -28,12 +28,13 @@
 
 ## How to Run the Project Locally
 
-1. **Clone the repository:**
+1. **Clone the repository :**
 
 git clone <your-repo-url>
 cd Webenza_project
 
-2. **Create & activate virtual environment:**
+2. **Create & activate virtual environment :**
+
 python -m venv webenza_env
 
 **For Windows:**
@@ -45,12 +46,11 @@ webenza_env\Scripts\activate
 
 source webenza_env/bin/activate
 
-3. **Install dependencies:**
+3. **Install dependencies :**
 
 pip install -r requirements.txt
 
-4. **Configure your PostgreSQL database in settings.py:**
-
+4. **Configure your PostgreSQL database in settings.py : **
 Update DATABASES in your settings.py with your credentials.
 
 5. **Run migrations and start the server:**
@@ -58,4 +58,3 @@ Update DATABASES in your settings.py with your credentials.
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
-
