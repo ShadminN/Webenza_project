@@ -50,7 +50,7 @@ source webenza_env/bin/activate
 
 pip install -r requirements.txt
 
-4. **Configure your PostgreSQL database in settings.py : **
+4. **Configure your PostgreSQL database in settings.py :**
 Update DATABASES in your settings.py with your credentials.
 
 5. **Run migrations and start the server:**
