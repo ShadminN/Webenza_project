@@ -61,7 +61,7 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 
-## 6. Run the development server
+6. Run the development server
 
 python manage.py runserver
 
