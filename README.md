@@ -34,10 +34,11 @@ git clone <your-repo-url>
 cd Webenza_project
 
 2. **Create & activate virtual environment**
-   
 python -m venv webenza_env
+
 **For Windows:**
 webenza_env\Scripts\activate
+
 **For Linux/Mac:**
 source webenza_env/bin/activate
 
