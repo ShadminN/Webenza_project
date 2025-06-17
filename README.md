@@ -1,4 +1,4 @@
-## Travel Booking Management System
+# Travel Booking Management System
 ## Tech Stack: Python · Django · PostgreSQL
 
 
@@ -36,9 +36,9 @@ cd Webenza_project
 2. **Create & activate virtual environment**
    
 python -m venv webenza_env
-# For Windows:
+**For Windows:**
 webenza_env\Scripts\activate
-# For Linux/Mac:
+**For Linux/Mac:**
 source webenza_env/bin/activate
 
 3. **Install dependencies**
