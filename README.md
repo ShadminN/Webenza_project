@@ -1,12 +1,7 @@
 # Travel Booking Management System
-## Tech Stack: Python · Django · PostgreSQL
 
+A full-stack Django-based travel booking and management system with client registration, admin dashboard, and city/package handling features. Built to manage customer interactions, city packages, and client data efficiently.It ia a web application developed using the Django framework, designed to allow clients to register, browse city packages, and submit booking information. Admins can manage data through a dashboard and update travel packages dynamically using integrated media (images, text).
 
-## Overview 
-
-  - TravelTrack is a web-based travel management system developed using Django and PostgreSQL.
-  - The platform allows clients to register, login, and book travel packages based on available cities.
-  - Admins can manage client data, travel packages, and city information from a centralized dashboard.
 
 
 ## Features
@@ -24,6 +19,13 @@
 - **Database**:
   - PostgreSQL used as backend relational database. 
   - Django ORM used for data operations, migrations, and queries.
+
+## Tech Stack
+
+- **Backend:** Python, Django  
+- **Database:** PostgreSQL  
+- **Frontend:** Django Templates, HTML, CSS, JavaScript
+- **Environments:** `webenza_env` virtual environment setup
 
 
 ## How to Run the Project Locally
@@ -57,4 +59,14 @@ Update DATABASES in your settings.py with your credentials.
 
 python manage.py makemigrations
 python manage.py migrate
+python manage.py createsuperuser
+
+## 6. Run the development server
+
 python manage.py runserver
+
+Access the site at http://127.0.0.1:8000/ and the admin panel at http://127.0.0.1:8000/admin.
+
+## License
+This project is licensed under the MIT License. See LICENSE for details.
+
